@@ -1,0 +1,5 @@
+# ninja log v5
+1	460	1644619808813993560	CMakeFiles/graphnode.dir/GraphNode.cpp.o	f8ee74d26b9cd6c5
+460	473	1644619808825992149	libgraphnode.a	6107bfc337d7168d
+0	843	1644662950110144375	CMakeFiles/graphnode.dir/src/GraphNode.cpp.o	47d2a408d0a46a8d
+844	860	1644662950130147080	libgraphnode.a	e6b2988641b6f242

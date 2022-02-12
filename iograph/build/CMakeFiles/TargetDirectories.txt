@@ -1,0 +1,3 @@
+/home/saso/CLionProjects/iograph/build/CMakeFiles/rebuild_cache.dir
+/home/saso/CLionProjects/iograph/build/CMakeFiles/edit_cache.dir
+/home/saso/CLionProjects/iograph/build/CMakeFiles/iograph.dir

@@ -1,0 +1,6 @@
+# ninja log v5
+514	525	1644352176022820353	libiograph.a	cb61ccbf1a9a5b06
+0	514	1644352176010821229	CMakeFiles/iograph.dir/InputOutputHandler.cpp.o	18165f16c5e6c3dd
+2	32	1644663041022863146	build.ninja	e4a0108e26b2d2c6
+0	866	1644663041894862097	CMakeFiles/iograph.dir/src/InputOutputHandler.cpp.o	552d26605f93435a
+866	880	1644663041910862077	libiograph.a	b6ac847e9a1571e7

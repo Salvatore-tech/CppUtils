@@ -1,0 +1,3 @@
+/home/saso/CLionProjects/graphnode/build/CMakeFiles/rebuild_cache.dir
+/home/saso/CLionProjects/graphnode/build/CMakeFiles/edit_cache.dir
+/home/saso/CLionProjects/graphnode/build/CMakeFiles/graphnode.dir
