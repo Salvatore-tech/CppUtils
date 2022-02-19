@@ -4,6 +4,9 @@
 
 #include "../include/GraphNodeReachable.h"
 
+template
+class GraphNodeReachable<int>;
+
 template<typename T>
 GraphNodeReachable<T>::GraphNodeReachable(T key):GraphNode<T>(key) {
     isReachable = false;
