@@ -12,12 +12,12 @@ class GraphNodeReachable : public GraphNode<T>{
 public:
     GraphNodeReachable(T key);
 
-    bool isReachable1() const;
+    bool isReachable() const;
 
     void setIsReachable(bool isReachable);
 
 private:
-    bool isReachable;
+    bool reachable;
 };
 
 

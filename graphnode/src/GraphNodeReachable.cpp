@@ -9,15 +9,15 @@ class GraphNodeReachable<int>;
 
 template<typename T>
 GraphNodeReachable<T>::GraphNodeReachable(T key):GraphNode<T>(key) {
-    isReachable = false;
+    reachable = false;
 }
 
 template<typename T>
-bool GraphNodeReachable<T>::isReachable1() const {
-    return isReachable;
+bool GraphNodeReachable<T>::isReachable() const {
+    return reachable;
 }
 
 template<typename T>
 void GraphNodeReachable<T>::setIsReachable(bool isReachable) {
-    GraphNodeReachable::isReachable = isReachable;
+    GraphNodeReachable::reachable = isReachable;
 }
