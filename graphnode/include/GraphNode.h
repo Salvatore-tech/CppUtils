@@ -29,6 +29,10 @@ public:
         edges.clear();
     }
 
+    bool isReachable() const;
+
+    void setReachable(bool isReachable);
+
     bool operator==(GraphNode *rhs) const {
         return key == rhs->key;
     }
@@ -41,6 +45,7 @@ private:
 
     T key;
     std::vector<std::weak_ptr<GraphNode<T>>> edges;
+    bool reachable;
 };
 
 

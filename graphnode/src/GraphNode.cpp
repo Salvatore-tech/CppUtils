@@ -28,7 +28,7 @@ std::vector<std::weak_ptr<GraphNode<T>>> *GraphNode<T>::getEdgesPtr() {
 template<typename T>
 bool GraphNode<T>::addEdge(std::shared_ptr<GraphNode<T>> targetNode) {
     int index = 0;
-    if(targetNode.get() == this) // Self loop
+    if (targetNode.get() == this) // Self loop
         return false;
     for (auto &edge: edges) {
         if (auto tempSharedPtr = edge.lock()) {
@@ -37,7 +37,8 @@ bool GraphNode<T>::addEdge(std::shared_ptr<GraphNode<T>> targetNode) {
 //                          << std::endl;
                 return false;
             }
-        } else {
+        }
+        else {
             edges.erase(edges.begin() + index); // Erasing an expired weak pointer
         }
         index++;
@@ -60,6 +61,16 @@ bool GraphNode<T>::hasEdge(const GraphNode<T> &targetNode) {
         }
     }
     return false;
+}
+
+template<typename T>
+bool GraphNode<T>::isReachable() const {
+    return reachable;
+}
+
+template<typename T>
+void GraphNode<T>::setReachable(bool reachable) {
+    this->reachable = reachable;
 }
 
 
