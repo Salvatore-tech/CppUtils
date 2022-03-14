@@ -3,6 +3,7 @@
 //
 
 #include <vector>
+#include <iostream>
 #include "../include//DoubleHashingStrategy.h"
 
 template
@@ -15,24 +16,25 @@ DoubleHashingStrategy<T>::DoubleHashingStrategy(int tableSize) : HashingStrategy
 
 template<typename T>
 void DoubleHashingStrategy<T>::setSieve() {
-    // Create a boolean array "prime[0..tableSize]" and initialize
+    // Create a boolean array "prime[0..tableSize-1]" and initialize
     // all entries it as true. A value in prime[i] will
     // finally be false if i is Not a prime, else true.
-    std::vector<bool> prime(this->tableSize + 1, true);
+    std::vector<bool> prime(this->tableSize - 1, true);
 
     for (int p = 2; p * p <= this->tableSize; p++) {
         // If prime[p] is not changed,
         // then it is a prime
         if (prime[p]) {
-            for (int i = p * p; i <= this->tableSize; i += p)
+            for (int i = p * p; i <= prime.size(); i += p)
                 prime[i] = false;
         }
     }
 
-    for (int i = this->tableSize; i >= 2; i--)
+    for (int i = prime.size(); i >= 2; i--)
         if (prime[i]) {
-            primeNumber = prime[i];
-            return;
+            primeNumber = i;
+            std::cout << "Max prime number: " << primeNumber << std::endl;
+            break;
         }
 }
 
