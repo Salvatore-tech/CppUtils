@@ -4,11 +4,24 @@
 
 #include <fstream>
 #include <iostream>
+#include <cstring>
 #include "../include/InputOutputHandler.h"
 #include "../include/FileMetadata.h"
 
 template
 class InputOutputHandler<int>; // Types of input file data
+
+template<typename T>
+char *InputOutputHandler<T>::getPathToInputFile(char *fileName) {
+    if (!fileName) {
+        std::cerr << "File name is NULL\n";
+        return nullptr;
+    }
+    char *relativePathToInputFile = static_cast<char *>(malloc(50 * sizeof(char)));
+    std::strcat(relativePathToInputFile, "./resources/");
+    strcat(relativePathToInputFile, fileName);
+    return relativePathToInputFile;
+}
 
 template<typename T>
 FileMetadata
@@ -58,5 +71,4 @@ void InputOutputHandler<T>::requestInput() {
     std::cin.ignore();
     std::cin.get();
 }
-
 

@@ -12,6 +12,8 @@
 template<typename T>
 class InputOutputHandler {
 public:
+    char* getPathToInputFile(char* fileName);
+
     FileMetadata readInputGraph(const std::string &fileName, std::map<T, std::vector<T>> &graphBuffer) const;
 
     void requestSourceAndTargetNode(int *sourceNodeKey, int *targetNodeKey);
