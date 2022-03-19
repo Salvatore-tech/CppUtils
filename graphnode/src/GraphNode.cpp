@@ -69,8 +69,8 @@ bool GraphNode<T>::isReachable() const {
 }
 
 template<typename T>
-void GraphNode<T>::setReachable(bool reachable) {
-    this->reachable = reachable;
+void GraphNode<T>::setReachable(bool isReachable) {
+    reachable = isReachable;
 }
 
 
