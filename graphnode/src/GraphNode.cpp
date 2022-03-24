@@ -8,7 +8,7 @@ template
 class GraphNode<int>;
 
 template<typename T>
-GraphNode<T>::GraphNode(T key) : key(key) {}
+GraphNode<T>::GraphNode(T key) : key(key), reachable(false) {}
 
 template<typename T>
 T GraphNode<T>::getKey() const {
@@ -37,8 +37,7 @@ bool GraphNode<T>::addEdge(std::shared_ptr<GraphNode<T>> targetNode) {
 //                          << std::endl;
                 return false;
             }
-        }
-        else {
+        } else {
             edges.erase(edges.begin() + index); // Erasing an expired weak pointer
         }
         index++;

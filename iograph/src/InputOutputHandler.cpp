@@ -6,7 +6,6 @@
 #include <iostream>
 #include <cstring>
 #include "../include/InputOutputHandler.h"
-#include "../include/FileMetadata.h"
 
 template
 class InputOutputHandler<int>; // Types of input file data
@@ -18,7 +17,7 @@ char *InputOutputHandler<T>::getPathToInputFile(char *fileName) {
         return nullptr;
     }
     char *relativePathToInputFile = static_cast<char *>(malloc(50 * sizeof(char)));
-    std::strcat(relativePathToInputFile, "./resources/");
+    std::strcat(relativePathToInputFile, "../resources/");
     strcat(relativePathToInputFile, fileName);
     return relativePathToInputFile;
 }
