@@ -8,6 +8,7 @@
 #include <vector>
 #include <iostream>
 #include <memory>
+#include "GraphNodeStatus.h"
 
 template<typename T>
 class GraphNode {
@@ -29,9 +30,9 @@ public:
         edges.clear();
     }
 
-    bool isReachable() const;
+    GraphNodeStatus getNodeStatus() const;
 
-    void setReachable(bool isReachable);
+    void setNodeStatus(GraphNodeStatus nodeStatus);
 
     bool operator==(GraphNode *rhs) const {
         return key == rhs->key;
@@ -45,7 +46,7 @@ private:
 
     T key;
     std::vector<std::weak_ptr<GraphNode<T>>> edges;
-    bool reachable;
+    GraphNodeStatus nodeStatus;
 };
 
 

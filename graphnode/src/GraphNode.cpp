@@ -8,7 +8,7 @@ template
 class GraphNode<int>;
 
 template<typename T>
-GraphNode<T>::GraphNode(T key) : key(key), reachable(false) {}
+GraphNode<T>::GraphNode(T key) : key(key), nodeStatus(unreachable) {}
 
 template<typename T>
 T GraphNode<T>::getKey() const {
@@ -63,13 +63,13 @@ bool GraphNode<T>::hasEdge(const GraphNode<T> &targetNode) {
 }
 
 template<typename T>
-bool GraphNode<T>::isReachable() const {
-    return reachable;
+GraphNodeStatus GraphNode<T>::getNodeStatus() const {
+    return nodeStatus;
 }
 
 template<typename T>
-void GraphNode<T>::setReachable(bool isReachable) {
-    reachable = isReachable;
+void GraphNode<T>::setNodeStatus(GraphNodeStatus nodeStatus) {
+    this->nodeStatus = nodeStatus;
 }
 
 
