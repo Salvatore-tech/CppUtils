@@ -38,12 +38,9 @@ public:
         return key == rhs->key;
     }
 
-    template<typename> friend
-    class HashTable;
-
-private:
     std::vector<std::weak_ptr<GraphNode<T>>> *getEdgesPtr();
 
+private:
     T key;
     std::vector<std::weak_ptr<GraphNode<T>>> edges;
     GraphNodeStatus nodeStatus;
